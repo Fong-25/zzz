@@ -1,4 +1,4 @@
-test_folder/
+test_folder
 
 # Dependencies
 node_modules/
@@ -19,3 +19,4 @@ yarn-error.log*
 .vscode/
 *.swp
 *.swo
+
