@@ -17,3 +17,6 @@ yarn-error.log*
 .vscode/
 *.swp
 *.swo
+
+# Files
+.test_folder
