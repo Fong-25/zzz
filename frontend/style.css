@@ -30,7 +30,9 @@ input, textarea{
     height:50px;
     border-radius:10px;
     padding:5px;
-    font-size:20px
+    font-size:20px;
+    position:relative;
+    margin-bottom:0;
 }
 #name::placeholder{
     font-size:20px
@@ -38,7 +40,8 @@ input, textarea{
 #content{
     padding:5px;
     border-radius:10px;
-    font-size:20px
+    font-size:20px;
+    translate:0 -5px
 }
 #content::placeholder{
     font-size:20px
