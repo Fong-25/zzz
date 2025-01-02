@@ -7,10 +7,11 @@ body{
     display:flex;
     justify-content:center;
     position: relative;
-}
+
+    height:100vh}
 #container{
-    width:450px;
-    max-width: 90%;
+    width:600px;
+    max-width: 95%;
     text-align:center;
     margin-top:20px
 }
@@ -47,11 +48,11 @@ input, textarea{
     font-size:20px
 }
 button{
-    width:40%;
-    aspect-ratio: 3/1;
+    width:93%;
+    aspect-ratio: 10/1;
     border-radius:15px;
     border:none;
-    background:rgb(4, 83, 4);
+    background:rgb(7, 116, 7);
     color:white;
     font-size:150%;
     box-shadow:5px 5px 10px 0 rgb(95, 91, 91);
@@ -66,14 +67,11 @@ button:hover{
     background:rgb(11, 95, 11);
 }
 button:active{
-    background:rgb(19, 180, 19);
+    background:rgb(16, 155, 16);
 }
 
 #header{
     font-size:1.7em
-}
-#ty{
-    font-size:1.5em
 }
 .footer{
     position:fixed;
