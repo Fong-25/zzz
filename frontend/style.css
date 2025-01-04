@@ -2,30 +2,40 @@
     margin:0;
     padding:0;
     font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
 }
 body{
     display:flex;
     justify-content:center;
     position: relative;
+    height:100vh;
+    align-items: flex-start;
+    /* background: rgb(164,195,162); */
+    background: url("https://watermark.lovepik.com/background/20220225/large/lovepik-creative-minimalist-green-background-image_402138367.jpg") no-repeat center center/cover;
 
-    height:100vh}
+}   
 #container{
     width:600px;
     max-width: 95%;
     text-align:center;
-    margin-top:20px
-}
-#form{
+    margin-top:20px;
+    padding:10px;
     display:flex;
     flex-direction: column;
     align-items:center;
     justify-content:center;
-    gap:10px
+    gap:10px;
+    background:rgb(247, 244, 244, 0.25);
+    border:2px solid rgb(77, 73, 73);
+    backdrop-filter: blur(10px);;
+    border-radius:20px
 }
 input, textarea{
     width:90%;
     border:2px solid rgb(77, 73, 73);
     outline:none;
+    background:#ceeaeb;
+    color:black
 }
 #name{
     height:50px;
@@ -48,13 +58,13 @@ input, textarea{
     font-size:20px
 }
 button{
-    width:93%;
+    width:90%;
     aspect-ratio: 10/1;
     border-radius:15px;
     border:none;
-    background:rgb(7, 116, 7);
-    color:white;
-    font-size:150%;
+    background:#b0d4b8;
+    color:rgb(36, 32, 32);
+    font-size:clamp(1.3em, 2.3vw, 2em);
     box-shadow:5px 5px 10px 0 rgb(95, 91, 91);
     transition: 300ms linear;
     cursor: pointer;
@@ -64,16 +74,18 @@ input:focus, textarea:focus{
 }
 button:hover{
     box-shadow: none;
-    background:rgb(11, 95, 11);
+    background:#9dc4a6
 }
 button:active{
-    background:rgb(16, 155, 16);
+    background:#b3d4ba;
 }
 
 #header{
-    font-size:1.7em
+    /* font-size:1.7em */
+    font-size:clamp(1.7em, 2.3vw, 2.2em);
+    color:rgb(196, 236, 189)
 }
-.footer{
+/* .footer{
     position:fixed;
     bottom:0;
     width:100%;
@@ -81,8 +93,4 @@ button:active{
     padding:20px 20px 10px 2.5em;
     margin-top: 10px;
     opacity: 0.8;
-}
-ol{
-    margin-left:25px;
-    list-style-type:decimal-leading-zero;
-}
+} */
