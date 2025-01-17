@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js",
+    "client": "cd frontend-react && npm start",
+    "dev": "concurrently \"npm start\" \"npm run client\"",
+    "build": "cd frontend-react && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +18,8 @@
     "express": "^4.21.2",
     "mongodb": "^6.12.0",
     "mongoose": "^8.9.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }

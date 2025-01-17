@@ -18,13 +18,20 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files (index.js, style.css, etc.) from the 'frontend' directory
-app.use(express.static(path.join(__dirname, '../frontend')));
+// app.use(express.static(path.join(__dirname, '../frontend')));
+
 
 // //Rendering HTML
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+// });
 
+// Serve static files (index.html, style.css, etc.) from the 'frontend-react' directory
+app.use(express.static(path.join(__dirname, 'frontend-react/build')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend-react/build', 'index.html'));
+});
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI)
