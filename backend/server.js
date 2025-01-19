@@ -1,8 +1,8 @@
-// At the top of your server.js
+// backend/server.js
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-// // Add these lines to understand what's happening
+// checking the path of the .env file
 // console.log('Looking for .env file at:', path.resolve(__dirname, '../.env'));
 // console.log('Current directory:', __dirname);
 // console.log('MongoDB URI exists:', !!process.env.MONGODB_URI);
@@ -26,11 +26,21 @@ app.use(express.json());
 //   res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 // });
 
-// Serve static files (index.html, style.css, etc.) from the 'frontend-react' directory
+// Serve static React files (index.html, style.css, etc.) from the 'frontend-react' directory
 app.use(express.static(path.join(__dirname, 'frontend-react/build')));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend-react/build', 'index.html'));
+});
+
+// Fetching messages
+app.get('/api/messages/all', async (req, res) => {
+  try {
+    const messages = await Message.find().sort({ timestamp: -1 });
+    res.json(messages);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching messages' });
+  }
 });
 
 // MongoDB connection

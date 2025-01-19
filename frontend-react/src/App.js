@@ -1,5 +1,8 @@
 // src/App.js
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Button from './Button';
+import Messages from './Messages';
 import './style.css';
 
 function App() {
@@ -44,30 +47,41 @@ function App() {
   };
 
   return (
-    <div id="container">
-      <div id="form">
-        <h1 id="header">Lorem, ipsum.</h1>
-        <input
-          type="text"
-          placeholder="name"
-          id="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <textarea
-          id="content"
-          cols="30"
-          rows="10"
-          placeholder="lorem"
-          value={formData.content}
-          onChange={handleChange}
-        />
-        <button id="send" onClick={handleSubmit}>
-          Send
-        </button>
-        <h1 id="footer">Thank you.</h1>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+          <>
+          <div id="container">
+            <div id="form">
+              <h1 id="header">Lorem, ipsum.</h1>
+              <input
+                type="text"
+                placeholder="name"
+                id="name"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <textarea
+                id="content"
+                cols="30"
+                rows="10"
+                placeholder="lorem"
+                value={formData.content}
+                onChange={handleChange}
+              />
+              <button id="send" onClick={handleSubmit}>
+                Send
+              </button>
+              <h1 id="footer">Thank you.</h1>
+            </div>
+          </div>
+          <Button />
+          </>
+          
+        } />
+        <Route path="/messages/:password" element={<Messages />} />
+      </Routes>
+    </Router>
   );
 }
 

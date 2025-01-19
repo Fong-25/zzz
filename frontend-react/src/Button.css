@@ -1,0 +1,25 @@
+/* src/Button.css */
+.custom-button {
+    height:30px;
+    width:30px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow:none;
+    position: absolute;
+    bottom: 20px;  
+    right: 20px;   
+  }
+  
+  .custom-button:hover {
+    background-color: #45a049;
+  }
+  
+  .custom-button:active {
+    background-color: #3d8b40;
+  }
